@@ -55,6 +55,10 @@ func (c ServerConfig) FocusedCluster() string {
 	return strings.Split(c.Project, ":")[0]
 }
 
+func (c ServerConfig) FocusedProject() string {
+	return strings.Split(c.Project, ":")[1]
+}
+
 func (c ServerConfig) EnvironmentURL() (string, error) {
 	url, err := baseURL(c.URL)
 	if err != nil {
